@@ -1,1 +1,16 @@
-# dmx-controller
+# DMX Controller
+## The Boards 
+### Board 2 Revision A
+In revision A (REV A) the `S̅R̅C̅L̅R̅` pin on the shift register is pulled HIGH, this keeps the shift registers in a constantly cleared state. I thought that the issue was with the output enable pin (`O̅E̅`) as I said in my AT2, but this wasn’t the issue. I’m not even sure where that came from as the correction that I made to my board was on the right pin (`S̅R̅C̅L̅R̅`). In REV A, the NPN transistors to properly drive the 7-segment display are also missing. In order to use this revision, 2 cuts must be made as shown to cut the `S̅R̅C̅L̅R̅` pin from the ground plane. A wire can then be soldered directly onto the pin of the shift register that goes to an exposed +5V source. 2 possibilities for this are shown on the image below. In this revision the ICSP header is also flipped so the connector pinout is only correct on the back of the board, even though the silkscreen shows that the connector should be on the front. This is fixed in later revisions (I think). In this revision, for it to be bus powered (powered from USB) a wire needs to be soldered in from the fuse of the USB to the +5V port on the other side of the board (also in the image below, the white wire). Solder to the side after the fuse, as then it still gives you the protection. 
+
+### Board 2 Revision B
+In revision B (REV B), the same mistake exists regarding the `S̅R̅C̅L̅R̅` pin, except this time the output enable pin is wrongly pulled HIGH as well. 1 step forward, 2 steps back. So, for the revision B board, 3 points need to be cut, as outlined in the image below. Cut 1 is to cut the +5V rail going to the `O̅E̅` pin on the shift register. Cuts 2 and 3 are both to cut the `S̅R̅C̅L̅R̅` pin from the ground plane. This cut leaves you with a small floating ground plane island, but it shouldn’t really matter, there isn’t anything that sensitive around it. For all 3 cuts, you can simply use a small X-Acto knife or Stanley knife to cut the trace, similar to how you might on a strip board. 2 wires then have to be soldered directly onto the pins of the shift register going to an exposed +5V and GND point. I recommend using the exposed power input/output, as that isn’t used at all in the current design.
+
+### Board 2 Revision C
+Revision C (REV C) should have hopefully fixed all the issues, although I’m not going to order them, I’m happy just to keep the wires there. The files for it are in the GitHub if you would like to produce your own batch. No guarantees though….
+
+### Board 1 Revision A
+Similar to board 2, in revision A (REV A) of this board, the `S̅R̅C̅L̅R̅` pin on the shift registers are pulled HIGH, this keeps the shift registers in a constantly cleared state. 2 cuts need to make in the positions shown on the image below. A wire then has to be soldered directly onto the pin of the shift register and connected to a +5V source. The most convenient for me was the interconnect’s +5V line, as shown in the image below. 
+
+### Board 1 Revision B
+Revision B (REV B) should hopefully have fixed the issue. I’m not going to order any boards of this revision, but the files for it are in the GitHub, if you need to order anymore, or need it for reference. 
