@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:leonardo",
+    "programmer": "arduino:usbtinyisp",
+    "sketch": "AT2_Code.ino"
+}
